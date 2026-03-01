@@ -2,6 +2,8 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
+
 import { Absence } from '../models/absence.model';
 
 // Interface to extract total items from response
@@ -15,7 +17,7 @@ export interface PaginatedAbsences {
 })
 export class AbsenceService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/absences';
+  private apiUrl = `${environment.apiUrl}/absences`;
 
   // Get all absence
   getAbsences(

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
+
 import { Session } from '../models/session.model';
 
 @Injectable({
@@ -9,7 +11,7 @@ import { Session } from '../models/session.model';
 })
 export class AuthService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = `${environment.apiUrl}/users`;
 
   // BehaviorSubject holds the current state and emits it to new subscribers
   private currentUserSubject = new BehaviorSubject<Session | null>(null);
