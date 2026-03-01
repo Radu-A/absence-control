@@ -1,0 +1,54 @@
+<header class="modern-header">
+  <div class="header-container">
+    <div class="brand-section" routerLink="/dashboard/absences">
+      <div class="logo-mark">
+        <mat-icon>layers</mat-icon>
+      </div>
+      <span class="brand-text">Abcense <span class="fw-light">Control</span></span>
+    </div>
+
+    <nav class="nav-pills">
+      <a
+        routerLink="/dashboard/absences"
+        routerLinkActive="active-pill"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+      >
+        Absences
+      </a>
+      <a routerLink="/dashboard/absences/new" routerLinkActive="active-pill" class="nav-link">
+        New Absence
+      </a>
+    </nav>
+
+    <div class="actions-section">
+      <button mat-icon-button class="icon-action" aria-label="Notificaciones">
+        <mat-icon class="notifications">notifications_none</mat-icon>
+      </button>
+
+      <div class="divider"></div>
+
+      @if (currentUser$ | async; as user) {
+        <button class="profile-trigger" [matMenuTriggerFor]="menu">
+          <div class="avatar">{{ user.name | slice: 0 : 1 }}</div>
+          <div class="user-meta">
+            <span class="name">{{ user.name }}</span>
+            <span class="role">{{ user.role }}</span>
+          </div>
+          <mat-icon class="chevron">expand_more</mat-icon>
+        </button>
+      }
+
+      <mat-menu #menu="matMenu" class="modern-dropdown" xPosition="before">
+        <button mat-menu-item>
+          <mat-icon>person_outline</mat-icon>
+          <span>Account settings</span>
+        </button>
+        <button mat-menu-item (click)="onLogout()">
+          <mat-icon class="text-danger">logout</mat-icon>
+          <span class="text-danger">Close session</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</header>

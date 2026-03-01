@@ -1,0 +1,142 @@
+@use 'variables' as *;
+
+.page-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Headers */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-main;
+  margin: 0 0 4px 0;
+}
+
+.text-muted {
+  color: $text-muted;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.filters-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Search Input */
+.search-box {
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    height: 48px;
+    background-color: $bg-surface;
+  }
+}
+
+/* Filter Select */
+.modern-select {
+  width: 180px;
+  // To point to the internal container of the input
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: $bg-surface;
+    height: 48px;
+  }
+  ::ng-deep .mat-mdc-form-field-flex {
+    margin-top: -8px;
+  }
+}
+
+/* Card and table*/
+.table-card {
+  background-color: $bg-surface;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.modern-table {
+  width: 100%;
+  background: transparent;
+
+  th.mat-mdc-header-cell {
+    color: $text-muted;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    border-bottom: 1px solid $border-color;
+    padding: 16px;
+  }
+
+  td.mat-mdc-cell {
+    border-bottom: 1px solid $border-color;
+    padding: 16px;
+    color: $text-main;
+    font-size: 0.875rem;
+  }
+
+  .modern-row {
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: $bg-hover;
+      .action-btn {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Cell */
+.employee-cell {
+  display: flex;
+  flex-direction: column;
+  .employee-name {
+    font-weight: 600;
+  }
+  .absence-type {
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+}
+
+.date-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $text-muted;
+  .date-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.action-cell {
+  text-align: right;
+  .action-btn {
+    color: $text-muted;
+    opacity: 0.5;
+    transition: all 0.2s;
+    &:hover {
+      color: $primary-blue;
+      background-color: $primary-light;
+    }
+  }
+}
+
+/* Píldoras de Estado */
+.status-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+}

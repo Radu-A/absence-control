@@ -1,0 +1,150 @@
+{
+  "absences": [
+    {
+      "id": "1",
+      "userId": "1",
+      "employeeName": "Victor Outeiro",
+      "type": "Vacation",
+      "startDate": "2024-07-01",
+      "endDate": "2024-07-15",
+      "status": "Approved",
+      "reason": "Summer holidays"
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "employeeName": "Ana García",
+      "type": "Sick Leave",
+      "startDate": "2024-03-10",
+      "endDate": "2024-03-12",
+      "status": "Pending",
+      "reason": "Flu symptoms"
+    },
+    {
+      "id": "3",
+      "userId": "3",
+      "employeeName": "Juan Pérez",
+      "type": "Personal Days",
+      "startDate": "2024-04-20",
+      "endDate": "2024-04-21",
+      "status": "Rejected",
+      "reason": "Family event"
+    },
+    {
+      "id": "4",
+      "userId": "4",
+      "employeeName": "Laura Beltrán",
+      "type": "Vacation",
+      "startDate": "2024-08-05",
+      "endDate": "2024-08-20",
+      "status": "Approved",
+      "reason": "Trip to Japan"
+    },
+    {
+      "id": "5",
+      "userId": "5",
+      "employeeName": "Carlos Ruiz",
+      "type": "Maternity/Paternity",
+      "startDate": "2024-05-01",
+      "endDate": "2024-08-01",
+      "status": "Approved",
+      "reason": "New born"
+    },
+    {
+      "id": "6",
+      "userId": "6",
+      "employeeName": "Elena Sanz",
+      "type": "Training",
+      "startDate": "2024-06-10",
+      "endDate": "2024-06-12",
+      "status": "Pending",
+      "reason": "Angular Advanced Workshop"
+    },
+    {
+      "id": "7",
+      "userId": "7",
+      "employeeName": "Roberto Gómez",
+      "type": "Sick Leave",
+      "startDate": "2024-02-15",
+      "endDate": "2024-02-16",
+      "status": "Approved",
+      "reason": "Dental surgery"
+    },
+    {
+      "id": "8",
+      "userId": "8",
+      "employeeName": "Sofía Lara",
+      "type": "Personal Days",
+      "startDate": "2024-10-12",
+      "endDate": "2024-10-13",
+      "status": "Pending",
+      "reason": "Moving house"
+    },
+    {
+      "id": "9",
+      "userId": "9",
+      "employeeName": "Miguel Ángel",
+      "type": "Vacation",
+      "startDate": "2024-12-20",
+      "endDate": "2025-01-05",
+      "status": "Approved",
+      "reason": "Christmas break"
+    },
+    {
+      "id": "10",
+      "userId": "10",
+      "employeeName": "Lucía Méndez",
+      "type": "Sick Leave",
+      "startDate": "2024-11-05",
+      "endDate": "2024-11-10",
+      "status": "Rejected",
+      "reason": "Medical checkup (not justified)"
+    },
+    {
+      "id": "11",
+      "userId": "11",
+      "employeeName": "Diego Torres",
+      "type": "Training",
+      "startDate": "2024-09-15",
+      "endDate": "2024-09-17",
+      "status": "Approved",
+      "reason": "AWS Certification"
+    },
+    {
+      "id": "12",
+      "userId": "12",
+      "employeeName": "Marta Fluxà",
+      "type": "Vacation",
+      "startDate": "2024-07-15",
+      "endDate": "2024-07-30",
+      "status": "Pending",
+      "reason": "Beach time"
+    },
+    {
+      "employeeName": "Victor Outeiro",
+      "status": "Pending",
+      "type": "Vacation",
+      "startDate": "2026-02-02",
+      "endDate": "2026-02-13",
+      "reason": "Road Trip",
+      "id": "KTGxykm",
+      "userId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "user@auria.com",
+      "password": "password123",
+      "role": "USER",
+      "name": "Victor Outeiro"
+    },
+    {
+      "id": "2",
+      "email": "manager@auria.com",
+      "password": "manager123",
+      "role": "MANAGER",
+      "name": "Boss Auria"
+    }
+  ]
+}

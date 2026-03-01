@@ -1,0 +1,75 @@
+<div class="page-container">
+  <button mat-button class="back-btn text-muted" routerLink="/dashboard/absences">
+    <mat-icon>arrow_back</mat-icon>
+    Back to list
+  </button>
+
+  <div class="form-card">
+    <div class="card-header">
+      <h1 class="card-title">New Absence Request</h1>
+      <p class="text-muted">Fill in the details to register your absence.</p>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <form class="modern-form" [formGroup]="absenceForm" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+        <mat-form-field appearance="outline" class="form-field full-width">
+          <mat-label>Absence Type</mat-label>
+          <mat-select formControlName="type">
+            <mat-option value="Vacation">Vacation</mat-option>
+            <mat-option value="Sick Leave">Sick Leave</mat-option>
+            <mat-option value="Personal Days">Personal Days</mat-option>
+            <mat-option value="Maternity/Paternity">Maternity/Paternity</mat-option>
+            <mat-option value="Training">Training</mat-option>
+          </mat-select>
+          @if (absenceForm.get('type')?.hasError('required')) {
+            <mat-error>Please select an absence type.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field full-width">
+          <mat-label>Date Range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate formControlName="startDate" placeholder="Start date" />
+            <input matEndDate formControlName="endDate" placeholder="End date" />
+          </mat-date-range-input>
+
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+          @if (
+            absenceForm.get('startDate')?.hasError('required') ||
+            absenceForm.get('endDate')?.hasError('required')
+          ) {
+            <mat-error>You must select a valid date range.</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="form-field full-width textarea-field">
+        <mat-label>Reason for request</mat-label>
+        <textarea
+          matInput
+          formControlName="reason"
+          placeholder="Briefly explain the reason for your absence..."
+          rows="4"
+        ></textarea>
+        @if (absenceForm.get('reason')?.hasError('required')) {
+          <mat-error>The reason is required.</mat-error>
+        }
+        @if (absenceForm.get('reason')?.hasError('minlength')) {
+          <mat-error>Please provide more details (minimum 10 characters).</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="card-divider"></div>
+
+      <div class="form-actions">
+        <button mat-button type="button" routerLink="/dashboard/absences">Cancel</button>
+        <button mat-flat-button color="primary" type="submit">
+          <mat-icon>send</mat-icon> Submit Request
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

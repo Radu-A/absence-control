@@ -1,0 +1,57 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="brand-header">
+      <div class="logo-mark">
+        <mat-icon>layers</mat-icon>
+      </div>
+      <h1 class="brand-text">Abcense <span class="fw-light">Control</span></h1>
+      <p class="text-muted">Technical Assessment</p>
+    </div>
+
+    <div class="examiner-info">
+      <div class="info-header">
+        <mat-icon>info</mat-icon>
+        <span>Test Credentials</span>
+      </div>
+      <div class="info-content">
+        <p><strong>USER:</strong> user@auria.com / password123</p>
+        <p><strong>MANAGER:</strong> manager@auria.com / manager123</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="example@auria.com" />
+        <mat-icon matPrefix>email</mat-icon>
+        @if (loginForm.get('email')?.hasError('required')) {
+          <mat-error>Email is required</mat-error>
+        }
+        @if (loginForm.get('email')?.hasError('email')) {
+          <mat-error>Invalid email format</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Your password" />
+        <mat-icon matPrefix>lock</mat-icon>
+        @if (loginForm.get('password')?.hasError('required')) {
+          <mat-error>Password is required</mat-error>
+        }
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="submit-btn"
+        [disabled]="loginForm.invalid"
+      >
+        Sign In
+      </button>
+    </form>
+  </div>
+</div>
