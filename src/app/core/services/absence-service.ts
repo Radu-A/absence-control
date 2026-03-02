@@ -63,4 +63,12 @@ export class AbsenceService {
   createAbsence(absence: Omit<Absence, 'id'>): Observable<Absence> {
     return this.http.post<Absence>(this.apiUrl, absence);
   }
+
+  updateAbsence(id: string, status: string): Observable<Absence> {
+    return this.http.put<Absence>(`${this.apiUrl}/${id}`, status);
+  }
+
+  deleteAbsence(id: string): Observable<Absence> {
+    return this.http.delete<Absence>(`${this.apiUrl}/${id}`);
+  }
 }
