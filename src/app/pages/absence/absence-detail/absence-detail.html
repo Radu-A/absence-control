@@ -63,10 +63,20 @@
           @if (currentUser?.role === 'MANAGER') {
             <p class="text-muted text-sm">Manager actions</p>
             <div class="action-buttons">
-              <button mat-stroked-button class="btn-reject" color="warn">
+              <button
+                mat-stroked-button
+                class="btn-reject"
+                color="warn"
+                (click)="modifyStatus('Rejected')"
+              >
                 <mat-icon>close</mat-icon> Decline
               </button>
-              <button mat-flat-button class="btn-approve" color="primary">
+              <button
+                mat-flat-button
+                class="btn-approve"
+                color="primary"
+                (click)="modifyStatus('Approved')"
+              >
                 <mat-icon>check</mat-icon> Accept
               </button>
             </div>

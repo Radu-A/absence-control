@@ -17,7 +17,7 @@
       "type": "Sick Leave",
       "startDate": "2024-03-10",
       "endDate": "2024-03-12",
-      "status": "Pending",
+      "status": "Rejected",
       "reason": "Flu symptoms"
     },
     {
@@ -57,7 +57,7 @@
       "type": "Training",
       "startDate": "2024-06-10",
       "endDate": "2024-06-12",
-      "status": "Pending",
+      "status": "Approved",
       "reason": "Angular Advanced Workshop"
     },
     {

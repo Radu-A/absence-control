@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 import { Absence } from '../models/absence.model';
+import { B } from '@angular/cdk/keycodes';
 
 // Interface to extract total items from response
 export interface PaginatedAbsences {
@@ -65,7 +66,8 @@ export class AbsenceService {
   }
 
   updateAbsence(id: string, status: string): Observable<Absence> {
-    return this.http.put<Absence>(`${this.apiUrl}/${id}`, status);
+    console.log('Disparando petición a:', `${this.apiUrl}/${id}`);
+    return this.http.patch<Absence>(`${this.apiUrl}/${id}`, { status });
   }
 
   deleteAbsence(id: string): Observable<Absence> {

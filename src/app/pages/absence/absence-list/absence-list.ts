@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap } from 'rxjs';
 
 import { MatIcon } from '@angular/material/icon';
@@ -84,5 +84,12 @@ export class AbsenceList {
   handlePageEvent(pageEvent: PageModel) {
     this.pageIndex$.next(pageEvent.pageIndex);
     this.pageLimit$.next(pageEvent.pageSize);
+  }
+
+  router = inject(Router);
+  goToDetails(id: string) {
+    console.log('oli');
+
+    this.router.navigate(['/dashboard/absences/detail', id]);
   }
 }
