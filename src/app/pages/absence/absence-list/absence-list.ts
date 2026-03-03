@@ -2,23 +2,19 @@ import { Component, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap } from 'rxjs';
 
-import { MatFormField } from '@angular/material/form-field';
-import { MatLabel } from '@angular/material/form-field';
-import { MatSelect } from '@angular/material/select';
-import { MatOption } from '@angular/material/select';
-import { MatInput } from '@angular/material/input';
-
 import { Absence } from '../../../core/models/absence.model';
+import { Session } from '../../../core/models/session.model';
 
 import { AbsenceService } from '../../../core/services/absence-service';
 import { PageModel } from '../../../core/models/page.model';
 import { AuthService } from '../../../core/services/auth-service';
 
 import { List } from '../../../shared/list/list';
+import { FiltersSection } from '../../../shared/filters-section/filters-section';
 
 @Component({
   selector: 'app-absence-list',
-  imports: [MatInput, MatFormField, MatLabel, MatSelect, MatOption, List, AsyncPipe],
+  imports: [List, AsyncPipe, FiltersSection],
   templateUrl: './absence-list.html',
   styleUrl: './absence-list.scss',
 })
@@ -28,7 +24,7 @@ export class AbsenceList {
 
   displayedColumns: string[] = ['id', 'employee', 'dates', 'status', 'actions'];
 
-  currentUser = this.authService.getCurrentUser();
+  currentUser: Session | null = this.authService.getCurrentUser();
 
   // Filters
   searchTerm$ = new BehaviorSubject<string>('');

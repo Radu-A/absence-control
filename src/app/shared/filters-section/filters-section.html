@@ -1,0 +1,20 @@
+@if (currentUser() && currentUser()?.role) {
+  <div class="filters-section">
+    @if (currentUser()?.role === 'MANAGER') {
+      <mat-form-field class="search-box" appearance="outline">
+        <mat-label>Search by employee...</mat-label>
+        <input matInput class="modern-input" (keyup.enter)="onSearch($event.target.value)" />
+      </mat-form-field>
+    }
+
+    <mat-form-field appearance="outline" class="modern-select">
+      <mat-label>Status</mat-label>
+      <mat-select (selectionChange)="onStatusChange($event.value)">
+        <mat-option value="">All</mat-option>
+        <mat-option value="Approved">Approved</mat-option>
+        <mat-option value="Pending">Pending</mat-option>
+        <mat-option value="Rejected">Rejected</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+}
