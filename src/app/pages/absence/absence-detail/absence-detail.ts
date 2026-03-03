@@ -61,7 +61,17 @@ export class AbsenceDetail {
         // Refresh absence observable
         this.absence$ = this.absenceService.getAbsenceById(this.absenceId);
       },
-      error: (err) => console.error('Error real: ', err),
+      error: (err) => console.error('Something went wrong: ', err),
+    });
+  }
+
+  deleteAbsence() {
+    this.absenceService.deleteAbsence(this.absenceId).subscribe({
+      next: (res) => {
+        this.snackBar.open('The request has been cancelled', 'Close', { duration: 3000 });
+        this.router.navigate(['/dashboard/absences']);
+      },
+      error: (err) => console.error('Something went wrong: ', err),
     });
   }
 }
