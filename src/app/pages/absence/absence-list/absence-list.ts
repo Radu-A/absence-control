@@ -1,15 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { DatePipe } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
 import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap } from 'rxjs';
 
-import { MatIcon } from '@angular/material/icon';
 import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
 import { MatSelect } from '@angular/material/select';
 import { MatOption } from '@angular/material/select';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
 import { MatInput } from '@angular/material/input';
 
 import { Absence } from '../../../core/models/absence.model';
@@ -18,20 +14,11 @@ import { AbsenceService } from '../../../core/services/absence-service';
 import { PageModel } from '../../../core/models/page.model';
 import { AuthService } from '../../../core/services/auth-service';
 
+import { List } from '../../../shared/list/list';
+
 @Component({
   selector: 'app-absence-list',
-  imports: [
-    MatIcon,
-    MatInput,
-    MatFormField,
-    MatLabel,
-    MatSelect,
-    MatOption,
-    DatePipe,
-    RouterLink,
-    MatPaginator,
-    MatTableModule,
-  ],
+  imports: [MatInput, MatFormField, MatLabel, MatSelect, MatOption, List, AsyncPipe],
   templateUrl: './absence-list.html',
   styleUrl: './absence-list.scss',
 })
@@ -84,12 +71,5 @@ export class AbsenceList {
   handlePageEvent(pageEvent: PageModel) {
     this.pageIndex$.next(pageEvent.pageIndex);
     this.pageLimit$.next(pageEvent.pageSize);
-  }
-
-  router = inject(Router);
-  goToDetails(id: string) {
-    console.log('oli');
-
-    this.router.navigate(['/dashboard/absences/detail', id]);
   }
 }
