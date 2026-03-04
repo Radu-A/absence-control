@@ -10,12 +10,12 @@ import { PageModel } from '../../core/models/page.model';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-table',
   imports: [MatTableModule, MatIconModule, CommonModule, RouterLink, MatPaginator],
-  templateUrl: './list.html',
-  styleUrl: './list.scss',
+  templateUrl: './table.html',
+  styleUrl: './table.scss',
 })
-export class List {
+export class Table {
   dataSource: InputSignal<Absence[] | null> = input.required();
   totalElements = input.required();
   pageLimit = input.required();
