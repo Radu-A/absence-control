@@ -16,11 +16,12 @@
     ></app-filters-section>
   </div>
 
-  <app-list
+  <app-table
     [dataSource]="dataSource$ | async"
+    [currentUser]="currentUser"
     [totalElements]="totalElements"
     [pageLimit]="pageLimit$.value"
     [pageIndex]="pageIndex$.value"
     (page)="handlePageEvent($event)"
-  ></app-list>
+  ></app-table>
 </div>

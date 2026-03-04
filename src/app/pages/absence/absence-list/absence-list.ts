@@ -9,12 +9,12 @@ import { AbsenceService } from '../../../core/services/absence-service';
 import { PageModel } from '../../../core/models/page.model';
 import { AuthService } from '../../../core/services/auth-service';
 
-import { List } from '../../../shared/list/list';
+import { Table } from '../../../shared/table/table';
 import { FiltersSection } from '../../../shared/filters-section/filters-section';
 
 @Component({
   selector: 'app-absence-list',
-  imports: [List, AsyncPipe, FiltersSection],
+  imports: [Table, AsyncPipe, FiltersSection],
   templateUrl: './absence-list.html',
   styleUrl: './absence-list.scss',
 })
