@@ -18,6 +18,7 @@
 
   <app-table
     [dataSource]="dataSource$ | async"
+    [currentUser]="currentUser"
     [totalElements]="totalElements"
     [pageLimit]="pageLimit$.value"
     [pageIndex]="pageIndex$.value"
