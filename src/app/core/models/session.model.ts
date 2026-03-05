@@ -1,7 +1,9 @@
+import { UserRole } from './user.model';
+
 export interface Session {
   id: string;
   name: string;
   email: string;
-  role: 'USER' | 'MANAGER';
+  role: UserRole;
   token: string;
 }
