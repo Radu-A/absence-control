@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "email": "victor@auria.com",
+      "email": "user@auria.com",
       "password": "password123",
       "role": "USER",
       "name": "Victor Outeiro"
