@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
-import { MainLayout } from './layout/main-layout/main-layout';
+
 import { authGuard } from './core/guards/auth-guard';
+import { roleGuard } from './core/guards/role-guard';
+
+import { MainLayout } from './layout/main-layout/main-layout';
 
 export const routes: Routes = [
   {
@@ -9,8 +12,9 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canActivate: [authGuard],
     component: MainLayout,
+    canActivate: [authGuard, roleGuard],
+    data: { expectedRole: ['MANAGER', 'USER'] },
     children: [
       {
         path: 'absences',
