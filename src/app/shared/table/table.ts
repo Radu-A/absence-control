@@ -8,7 +8,6 @@ import { MatPaginator } from '@angular/material/paginator';
 
 import { Absence } from '../../core/models/absence.model';
 import { PageModel } from '../../core/models/page.model';
-import { MatPaginator } from '@angular/material/paginator';
 import { Session } from '../../core/models/session.model';
 
 @Component({
@@ -30,8 +29,6 @@ export class Table {
   handlePageEvent(pageEvent: PageModel) {
     this.page.emit(pageEvent);
   }
-
-  displayedColumns: string[] = ['id', 'employee', 'dates', 'status', 'actions'];
 
   ngOnInit() {
     if (this.currentUser()?.role === 'USER') {

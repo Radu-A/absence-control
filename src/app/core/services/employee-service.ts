@@ -27,7 +27,6 @@ export class EmployeeService {
       params = params.set('jobTitle', job);
     }
     const pageString = `?_page=${index + 1}&_limit=${limit}`;
-    console.log(`${this.apiUrl}${pageString}`);
 
     return this.http
       .get<User[]>(`${this.apiUrl}${pageString}`, { params, observe: 'response' })
