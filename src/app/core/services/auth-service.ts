@@ -5,6 +5,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 import { Session } from '../models/session.model';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -31,13 +32,15 @@ export class AuthService {
   // Fake login method
   login(email: string, password: string): Observable<boolean> {
     // json-server allows filter query params
-    return this.http.get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
+    return this.http.get<User[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
       map((users) => {
         if (users && users.length > 0) {
           const user = users[0];
+          console.log(user);
+
           const mockSession: Session = {
             id: user.id,
-            name: user.name,
+            name: `${user.firstName} ${user.lastName}`,
             email: user.email,
             role: user.role,
             token: `mock-jwt-token-for-${user.role.toLowerCase()}-${Date.now()}`,
