@@ -5,28 +5,60 @@
       "email": "user@auria.com",
       "password": "password123",
       "role": "USER",
-      "name": "Victor Outeiro"
+      "firstName": "Victor",
+      "lastName": "Outeiro",
+      "jobTitle": "Senior Frontend Developer",
+      "status": "ACTIVE",
+      "birthDate": "1983-06-05",
+      "startDate": "2022-01-10",
+      "taxId": "57894513V",
+      "phone": "+34456875425",
+      "NSS": "1025478954756"
     },
     {
       "id": "2",
       "email": "manager@auria.com",
       "password": "manager123",
       "role": "MANAGER",
-      "name": "Boss Auria"
+      "firstName": "Boss",
+      "lastName": "Auria",
+      "jobTitle": "Product Manager",
+      "status": "ACTIVE",
+      "birthDate": "1978-11-20",
+      "startDate": "2015-05-01",
+      "taxId": "12345678A",
+      "phone": "+34600111222",
+      "NSS": "2812345678901"
     },
     {
       "id": "3",
       "email": "juan@perez.com",
       "password": "password123",
       "role": "USER",
-      "name": "Juan Pérez"
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "jobTitle": "Backend Developer",
+      "status": "ACTIVE",
+      "birthDate": "1990-03-15",
+      "startDate": "2023-06-15",
+      "taxId": "87654321B",
+      "phone": "+34611222333",
+      "NSS": "2898765432109"
     },
     {
       "id": "4",
       "email": "elena@sanz.com",
       "password": "password123",
       "role": "USER",
-      "name": "Elena Sanz"
+      "firstName": "Elena",
+      "lastName": "Sanz",
+      "jobTitle": "UX/UI Designer",
+      "status": "ACTIVE",
+      "birthDate": "1995-07-22",
+      "startDate": "2024-02-01",
+      "taxId": "45678912C",
+      "phone": "+34622333444",
+      "NSS": "2845678912345"
     }
   ],
   "absences": [

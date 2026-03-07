@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { Absence } from '../../core/models/absence.model';
 import { PageModel } from '../../core/models/page.model';
@@ -23,6 +24,8 @@ export class Table {
   pageLimit = input.required();
   pageIndex = input.required();
   page = output<PageModel>();
+
+  displayedColumns: string[] = ['id', 'employee', 'dates', 'status', 'actions'];
 
   handlePageEvent(pageEvent: PageModel) {
     this.page.emit(pageEvent);

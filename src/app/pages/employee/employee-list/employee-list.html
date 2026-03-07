@@ -1,0 +1,21 @@
+<div class="page-container">
+  <div class="page-header">
+    <div class="header-titles">
+      <h1 class="page-title">Employee List</h1>
+      <p class="text-muted">Manage and review your team's members.</p>
+    </div>
+
+    <app-employee-filters
+      (searchTerm)="onSearch($event)"
+      (jobFilter)="onFilter($event)"
+    ></app-employee-filters>
+  </div>
+
+  <app-employee-table
+    [dataSource]="dataSource$ | async"
+    [totalElements]="totalElements"
+    [pageLimit]="pageLimit$.value"
+    [pageIndex]="pageIndex$.value"
+    (page)="handlePageEvent($event)"
+  ></app-employee-table>
+</div>

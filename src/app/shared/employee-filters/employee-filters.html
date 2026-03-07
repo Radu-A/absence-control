@@ -1,0 +1,16 @@
+<div class="filters-section">
+  <mat-form-field class="search-box" appearance="outline">
+    <mat-label>Search by lastname...</mat-label>
+    <input matInput class="modern-input" (keyup.enter)="onSearch($event.target.value)" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="modern-select">
+    <mat-label>Job Title</mat-label>
+    <mat-select (selectionChange)="onJobChange($event.value)">
+      <mat-option value="">All</mat-option>
+      @for (job of JOB_TITLES; track $index) {
+        <mat-option [value]="job">{{ job }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
