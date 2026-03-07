@@ -1,0 +1,95 @@
+<div class="page-container">
+  <button mat-button class="back-btn text-muted" routerLink="/dashboard/absences">
+    <mat-icon>arrow_back</mat-icon>
+    Back to list
+  </button>
+
+  <div class="detail-card">
+    @if (employee$ | async; as employee) {
+      <div class="card-header">
+        <div>
+          <h1 class="card-title">Request #{{ employee.id }}</h1>
+          <p class="text-muted">Absence request details</p>
+        </div>
+        <span class="status-pill" [ngClass]="getStatusClass(employee.status)">
+          {{ employee.status }}
+        </span>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="info-grid">
+        <div class="info-group">
+          <span class="info-label">Employee</span>
+          <div class="employee-info">
+            <div class="avatar">{{ employee.firstName | slice: 0 : 1 }}</div>
+            <span class="info-value">{{ employee.firstName }}</span>
+          </div>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Job Title</span>
+          <span class="info-value">{{ employee.jobTitle }}</span>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Birth Date</span>
+          <span class="info-value">
+            <mat-icon class="sm-icon">calendar_today</mat-icon>
+            {{ employee.birthDate | date: 'longDate' }}
+          </span>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Start Date</span>
+          <span class="info-value">
+            <mat-icon class="sm-icon">calendar_today</mat-icon>
+            {{ employee.startDate | date: 'longDate' }}
+          </span>
+        </div>
+      </div>
+
+      <div class="reason-section">
+        <span class="info-label">Phone</span>
+        <div class="reason-box">
+          <p>{{ employee.phone }}</p>
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <!-- @if (absence.status === 'Pending') {
+        <div class="action-footer">
+          @if (currentUser?.role === 'MANAGER') {
+            <p class="text-muted text-sm">Manager actions</p>
+            <div class="action-buttons">
+              <button
+                mat-stroked-button
+                class="btn-reject"
+                color="warn"
+                (click)="modifyStatus('Rejected')"
+              >
+                <mat-icon>close</mat-icon> Decline
+              </button>
+              <button
+                mat-flat-button
+                class="btn-approve"
+                color="primary"
+                (click)="modifyStatus('Approved')"
+              >
+                <mat-icon>check</mat-icon> Accept
+              </button>
+            </div>
+          } @else {
+            <p class="text-muted text-sm">User actions</p>
+            <div class="action-buttons">
+              <button mat-stroked-button class="btn-cancel" color="warn" (click)="deleteAbsence()">
+                <mat-icon>cancel</mat-icon> Cancel Request
+              </button>
+            </div>
+          }
+        </div>
+      } -->
+    }
+  </div>
+</div>

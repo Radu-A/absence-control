@@ -40,4 +40,8 @@ export class EmployeeService {
         }),
       );
   }
+
+  getEmployeeById(id: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
 }
