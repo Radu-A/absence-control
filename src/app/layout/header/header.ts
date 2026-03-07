@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthService } from '../../core/services/auth-service';
+import { Observable } from 'rxjs';
+import { Session } from '../../core/models/session.model';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +18,7 @@ export class Header {
   router = inject(Router);
   authService = inject(AuthService);
 
-  currentUser$ = this.authService.currentUser$;
+  currentUser$: Observable<Session | null> = this.authService.currentUser$;
 
   onLogout() {
     this.authService.logout();
