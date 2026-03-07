@@ -17,3 +17,8 @@ export interface Absence {
   status: AbsenceStatus;
   reason: string;
 }
+
+export interface PaginatedAbsences {
+  data: Absence[];
+  total: number;
+}

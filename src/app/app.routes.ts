@@ -13,12 +13,19 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: MainLayout,
-    canActivate: [authGuard, roleGuard],
-    data: { expectedRole: ['MANAGER', 'USER'] },
     children: [
       {
         path: 'absences',
+        canActivate: [authGuard, roleGuard],
+        data: { expectedRole: ['MANAGER', 'USER'] },
         loadChildren: () => import('./pages/absence/absence.routes').then((m) => m.absenceRoutes),
+      },
+      {
+        path: 'employees',
+        canActivate: [roleGuard],
+        data: { expectedRole: ['MANAGER'] },
+        loadChildren: () =>
+          import('./pages/employee/employee.routes').then((m) => m.employeeRoutes),
       },
       {
         path: '',

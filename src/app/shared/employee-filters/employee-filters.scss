@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.filters-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  /* Search Input */
+  .search-box {
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      height: 48px;
+      background-color: $bg-surface;
+    }
+  }
+
+  /* Filter Select */
+  .modern-select {
+    width: 180px;
+    // To point to the internal container of the input
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      background-color: $bg-surface;
+      height: 48px;
+    }
+    ::ng-deep .mat-mdc-form-field-flex {
+      margin-top: -8px;
+    }
+  }
+}

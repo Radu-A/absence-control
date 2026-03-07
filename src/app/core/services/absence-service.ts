@@ -4,14 +4,7 @@ import { map, Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 
-import { Absence } from '../models/absence.model';
-import { B } from '@angular/cdk/keycodes';
-
-// Interface to extract total items from response
-export interface PaginatedAbsences {
-  data: Absence[];
-  total: number;
-}
+import { Absence, PaginatedAbsences } from '../models/absence.model';
 
 @Injectable({
   providedIn: 'root',
