@@ -17,16 +17,30 @@
         Absences
       </a>
       <a routerLink="/dashboard/absences/new" routerLinkActive="active-pill" class="nav-link">
-        New Absence
+        New
+      </a>
+    </nav>
+
+    <nav class="nav-pills">
+      <a
+        routerLink="/dashboard/employees"
+        routerLinkActive="active-pill"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+      >
+        Employees
+      </a>
+      <a routerLink="/dashboard/employees/new" routerLinkActive="active-pill" class="nav-link">
+        New
       </a>
     </nav>
 
     <div class="actions-section">
-      <button mat-icon-button class="icon-action" aria-label="Notificaciones">
+      <!-- <button mat-icon-button class="icon-action" aria-label="Notificaciones">
         <mat-icon class="notifications">notifications_none</mat-icon>
       </button>
 
-      <div class="divider"></div>
+      <div class="divider"></div> -->
 
       @if (currentUser$ | async; as user) {
         <button class="profile-trigger" [matMenuTriggerFor]="menu">
