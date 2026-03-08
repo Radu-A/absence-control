@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
 
 import { EmployeeService } from '../../../core/services/employee-service';
@@ -8,7 +8,7 @@ import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-employee-detail',
-  imports: [CommonModule, AsyncPipe, MatButtonModule, MatIcon],
+  imports: [CommonModule, AsyncPipe, MatButtonModule, MatIcon, RouterLink],
   templateUrl: './employee-detail.html',
   styleUrl: './employee-detail.scss',
 })
